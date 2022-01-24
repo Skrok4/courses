@@ -65,7 +65,7 @@ return `a: ${array[0]}, b: ${array[2]}`
 }
 
 //5
-console.log("1 Task");
+console.log("5 Task");
 export function getTime(str){ 
     let listIdx = []
     let lastIndex = -1
