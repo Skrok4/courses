@@ -5,7 +5,7 @@ import {strToNumber} from './script'
 import {createPhoneNumber} from './script'
 import {getTime} from './script'
 //1
-//const basicOp = require('./script');
+
 describe('Test task 1:', () => {
     test ('should return 11, when 4 plus 7:', () => {
         expect(basicOp('+', 4, 7)).toBe(11);
