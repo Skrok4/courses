@@ -1,0 +1,29 @@
+{
+  "name": "first_task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Skrok4/courses.git"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "Alex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Skrok4/courses/issues"
+  },
+  "homepage": "https://github.com/Skrok4/courses#readme",
+  "dependencies": {
+    "@babel/core": "^7.16.12",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "babel-jest": "^27.4.6"
+  }
+}
