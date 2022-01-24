@@ -1,9 +1,9 @@
 
-import {basicOp} from './script'
-import {stringMerge} from './script'
-import {strToNumber} from './script'
-import {createPhoneNumber} from './script'
-import {getTime} from './script'
+import {basicOp} from './Homework/script'
+import {stringMerge} from './Homework/script'
+import {strToNumber} from './Homework/script'
+import {createPhoneNumber} from './Homework/script'
+import {getTime} from './Homework/script'
 //1
 
 describe('Test task 1:', () => {
