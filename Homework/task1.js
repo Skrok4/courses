@@ -1,21 +1,21 @@
-export function basicOp(operation, a, b){
-    if (isNaN(a) || isNaN(b)) {
+export function basicOp(operation, firstNum, secondNum){
+    if (isNaN(firstNum) || isNaN(secondNum)) {
         return 0
     }
-    let numA = parseInt(a)
-    let numB = parseInt(b)
+    let num1 = parseInt(firstNum)
+    let num2 = parseInt(secondNum)
     switch (operation) {
         case "+":
-            return numA + numB
+            return num1 + num2
     
         case "-":
-            return numA - numB
+            return num1 - num2
     
         case "*":
-            return numA * numB
+            return num1 * num2
     
         case "/":
-            return numA / numB
+            return num1 / num2
     
         default:
             return 0
