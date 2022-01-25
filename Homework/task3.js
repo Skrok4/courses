@@ -7,7 +7,7 @@ export function createPhoneNumber(numbers) {
             firstpart += numbers[i].toString()
         } else if (i >= 3 && i < 6) {
             secondpart += numbers[i].toString()
-        } else if (i >= 6) {
+        } else {
             thirdpart += numbers[i].toString()
         }
     }
