@@ -29,7 +29,6 @@ describe('Test task 1:', () => {
     })
 })
 
-//2
 describe('Test task 2:', () => {
     test ('should return "held" when "hello" + "world" split by "l":', ()=>{
         expect(stringMerge("hello","world","l")).toBe("held");
@@ -44,13 +43,13 @@ describe('Test task 2:', () => {
         expect(stringMerge("wonderful","people","e")).toBe("wondeople");
     });
 })
-//3
+
 describe('Test task 3:', () => {
     test ('Should return phone number that were consist of array elements:', ()=>{
         expect(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])).toBe("(123) 456-7890");
     })
 });
-//4
+
 describe('Test task 4:', () => {
     test ('Make numbers from string formula, that separated one of math operand and return it:', ()=>{
         expect(strToNumber('1 + 2')).toBe('a: 1, b: 2');
