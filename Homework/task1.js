@@ -1,23 +1,24 @@
-export function basicOp(operation, firstNum, secondNum){
-    if (isNaN(firstNum) || isNaN(secondNum)) {
-        return 0
-    }
-    const num1 = parseInt(firstNum)
-    const num2 = parseInt(secondNum)
-    switch (operation) {
-        case "+":
-            return num1 + num2
+xport function basicOp(operation, a, b){
+  if (isNaN(a) || isNaN(b)) {
+    return 0;
+  }
+
+  const numA = parseInt(a);
+  const numB = parseInt(b);
+
+  switch (operation) {
+    case '+':
+      return numA + numB;
+    case '-':
+      return numA - numB;
     
-        case "-":
-            return num1 - num2
+    case '*':
+      return numA * numB;
     
-        case "*":
-            return num1 * num2
+    case '/':
+      return numA / numB;
     
-        case "/":
-            return num1 / num2
-    
-        default:
-            return 0
-    }
-} 
+    default:
+      return 0;
+  }
+}
