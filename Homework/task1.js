@@ -2,8 +2,8 @@ export function basicOp(operation, firstNum, secondNum){
     if (isNaN(firstNum) || isNaN(secondNum)) {
         return 0
     }
-    let num1 = parseInt(firstNum)
-    let num2 = parseInt(secondNum)
+    const num1 = parseInt(firstNum)
+    const num2 = parseInt(secondNum)
     switch (operation) {
         case "+":
             return num1 + num2
