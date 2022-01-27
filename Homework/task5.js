@@ -5,8 +5,8 @@ export function getTime(str){
       listIdx.push(lastIndex)
     }
     for (let index = 0; index < listIdx.length; index++){
-    let hours = str.substr(listIdx[index]-2, 2)
-    let minutes = str.substr(listIdx[index]+1, 2)
+    const hours = str.substr(listIdx[index]-2, 2)
+    const minutes = str.substr(listIdx[index]+1, 2)
     if (parseInt(hours) < 0 || parseInt(hours) >= 24) {
         continue;
     }
