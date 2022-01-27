@@ -1,7 +1,7 @@
 export function strToNumber(str) {
   const array = str.split(' ');
 
-  if(array.length != 3) {
+  if(array.length !== 3) {
     return 'Error';
   }
 
