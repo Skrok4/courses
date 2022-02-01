@@ -1,13 +1,18 @@
-export function strToNumber(str) {
-    const array = str.split(' ');
-  
-    if(array.length !== 3) {
-      return 'Error';
+export const moveZeros = (importArray) =>{
+  const indexes = [];
+  const zero = 0;
+
+  for(let index = 0; index < importArray.length; index++){
+    if (importArray[index] === zero){
+      indexes.push(index);
     }
-  
-    if(['+', '-', '/', '*'].indexOf(array[1]) === -1){
-      return 'Operator input wrong';
-    }
-  
-    return `a: ${array[0]}, b: ${array[2]}`;
   }
+  indexes.reverse();
+
+  for(let index = 0; index < indexes.length; index++){
+    importArray.splice(indexes[index], 1);
+    importArray.push(zero);
+  }
+
+  return importArray;
+};
