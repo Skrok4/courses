@@ -8,7 +8,7 @@ describe('Test frankenSplice function', () => {
     expect(result).toStrictEqual([4, 1, 2, 3, 5]);
   });
 
-  test('Should return one array, consists of first array inserted at second at position 2', () => {
+  test('Should return ['head', 'shoulders', 'claw', 'tentacle', 'knees', 'toes'] when first array inserted at second at position 2', () => {
 
     const result = frankenSplice(['claw', 'tentacle'], ['head', 'shoulders', 'knees', 'toes'], 2);
 
