@@ -1,13 +1,13 @@
 export const createUrl = (template, params)=>{
-  const url = template.substr(0,4).split(' ');
+  let url = template;
+  const keyArray = template.match(/(?<=\{).+?(?=\})/gi);
 
-  for (const [key, value] of Object.entries(params)) {
-    if (template.includes('{' + key + '}')){
-      url.push('/' + value);
-    } else{
-      url.push('/undefined');
+  for (let i = 0; i < keyArray.length; i++) {
+    if (Object.keys(params).includes(keyArray[i])) {
+      url = url.replace(`{${keyArray[i]}}`, params[`${keyArray[i]}`]); 
     }
+    url = url.replace(`{${keyArray[i]}}`, 'undefined');
   }
 
-  return url.join('');
+  return url;
 };
