@@ -1,5 +1,5 @@
 export const createPrevArgSaver = () => {
-    let previousState = undefined;
+    let previousState;
     let currentState;
     
     return (state) => {
