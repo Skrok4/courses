@@ -1,5 +1,5 @@
 export const invertObject = (object) =>{
-    if (typeof object !== object && !Array.isArray(object) && null !== object) {
+    if (typeof object !== object && !Array.isArray(object) && object !== null) {
       let reverseObject = {};
       const sizeOfObject = Object.keys(object).length;
   
