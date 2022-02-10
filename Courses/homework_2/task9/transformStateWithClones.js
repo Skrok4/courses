@@ -5,9 +5,9 @@ export const transformStateWithClones = (state, transforms) => {
     transforms.forEach(element => {
       switch (element.operation) {
         case 'addProperties':
-          for (const key in element.properties) {
-            cloneOfState[key] = element.properties[key];
-          }
+        cloneOfState = {
+         ...cloneOfState, ...transforms[i].properties,
+         };
           resultOfAllPerfomed.push({...cloneOfState});
           break;
         case 'clear':
