@@ -7,9 +7,9 @@ body {
   font-size: 14pt;
 }
 
-ul > li:hover {
-  cursor: pointer;
-  font-weight: bold;
+.tree{
+  ::marker.active{
+    font-weight: bold;
+    cursor: pointer;
+  }
 }
-
-ul > li > ul {font-weight: normal;}
