@@ -1,6 +1,6 @@
 'use strict';
 
-const BigImg = document.getElementById('largeImg');
+const bigImg = document.getElementById('largeImg');
 const items = document.querySelectorAll('.list-item');
 
 items.forEach(item  => {
@@ -13,6 +13,6 @@ items.forEach(item  => {
       return;
 
     }
-    BigImg.src = currentElement.href;
+    bigImg.src = currentElement.href;
   });
 });
