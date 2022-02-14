@@ -7,9 +7,12 @@ body {
   font-size: 14pt;
 }
 
-.tree{
-  ::marker.active{
-    font-weight: bold;
-    cursor: pointer;
-  }
+ul > li.active {
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16pt;
+}
+
+ul > li > ul {
+  font-weight: normal;
 }
