@@ -43,8 +43,23 @@ btnNext.addEventListener('click', ()=>{
  };
 
  const checkBtns = () => {
-     position === 0 ? btnPrev.style.visibility = "hidden" : btnPrev.style.visibility = "visible";
-     position <= - (itemCount - 1) * itemWidth ? btnNext.style.visibility = "hidden" :  btnNext.style.visibility = "visible";
+     if(position === 0){
+        btnPrev.style.visibility = "hidden";
+        btnPrev.style.opacity = '0';
+        btnPrev.style.cursor = 'auto';
+     } else{
+        btnPrev.style.visibility = "visible";
+        btnPrev.style.opacity = '100';
+        btnPrev.style.cursor = 'pointer'
+     } if (position <= - (itemCount - 1) * itemWidth){
+        btnNext.style.visibility = "hidden";
+        btnNext.style.opacity = '0'
+        btnNext.style.cursor = 'auto';
+     } else{
+        btnNext.style.visibility = "visible";
+        btnNext.style.opacity = '100';
+        btnNext.style.cursor = 'pointer'    
+    }
  };
 
  checkBtns();
