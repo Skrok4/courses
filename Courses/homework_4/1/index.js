@@ -12,8 +12,14 @@ export const getData = async(url) => {
 };  
 
 const sortData = async() =>{
-  const unsortedList = await getData(storeURL);
+  let unsortedList = [];
 
+  try{
+    unsortedList  = await getData(storeURL);
+  } catch (error) {
+    return error;
+  }
+  
   const sortedList = unsortedList.sort((less, more) => more.price - less.price);
 
   sortedList.sort((x, y) => {
