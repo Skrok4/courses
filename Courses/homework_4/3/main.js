@@ -5,7 +5,7 @@ const postsURL = 'https://jsonplaceholder.typicode.com/posts';
 const commentsURL = 'https://jsonplaceholder.typicode.com/comments';
 
 
-const getData = async(url) => {
+export const getData = async(url) => {
   try {
     const response = await axios.get(url);
     return response.data;
@@ -15,6 +15,7 @@ const getData = async(url) => {
 };
 
 const usersWithPostAndComments = async() => {
+ 
   const users = await getData(usersURL);
   const posts = await getData(postsURL);
   const comments = await getData(commentsURL);
