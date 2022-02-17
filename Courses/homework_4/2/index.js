@@ -18,9 +18,9 @@ const getCompletedTasks = async() => {
 
   return userList.map((user) => {
     const userCompletedTodo = toDoList.filter(
-      (todo) => todo.userId === todo.completed && user.id);
+      (toDo) => toDo.completed && toDo.userId === user.id );
     
-    user.todo = userCompletedTodo;
+    user.toDo = userCompletedTodo;
 
     return user;  
   });
