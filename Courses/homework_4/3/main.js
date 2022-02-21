@@ -1,26 +1,24 @@
 import axios from 'axios';
 
-const usersURL = 'https://jsonplaceholder.typicode.com/users';
-const postsURL = 'https://jsonplaceholder.typicode.com/posts';
-const commentsURL = 'https://jsonplaceholder.typicode.com/comments';
-
-
-export const getData = async(url) => {
-  try {
-    const response = await axios.get(url);
-    return response.data;
-  } catch(error) {
-    return error;
-  }
+export const getData = (url) => {
+  return axios
+    .get(url)
+    .then((response) => { return response.data; })
+    .catch((error) => { return error; });
 };
+export default getData;
 
-const usersWithPostAndComments = async() => {
- 
+export const getUsersWithPostAndComments = async () => {
+
+  const usersURL = 'https://jsonplaceholder.typicode.com/users';
+  const postsURL = 'https://jsonplaceholder.typicode.com/posts';
+  const commentsURL = 'https://jsonplaceholder.typicode.com/comments';
+
   const users = await getData(usersURL);
   const posts = await getData(postsURL);
   const comments = await getData(commentsURL);
 
-  const userList = users.map(user => {
+  return userList = users.map(user => {
     const userPosts = posts.filter(post => user.id === post.userId);
 
     const userPostAndComments = userPosts.map(post => {
@@ -32,8 +30,6 @@ const usersWithPostAndComments = async() => {
 
     return user;
   });
-
-  return userList;
 };
 
-usersWithPostAndComments()
+//(async () => await getUsersWithPostAndComments())();
