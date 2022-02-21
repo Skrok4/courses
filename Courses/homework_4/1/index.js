@@ -1,24 +1,10 @@
+import { getData } from '../getData/main.js';
+
 const storeURL = 'https://fakestoreapi.com/products';
 
-export const getData = async(url) => {
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
+export const sortData = async() =>{
 
-    return data;
-  } catch (error) {
-    return error;
-  }
-};  
-
-const sortData = async() =>{
-  let unsortedList = [];
-
-  try{
-    unsortedList  = await getData(storeURL);
-  } catch (error) {
-    return error;
-  }
+  const unsortedList  = await getData(storeURL);
   
   const sortedList = unsortedList.sort((less, more) => more.price - less.price);
 
@@ -29,4 +15,4 @@ const sortData = async() =>{
   return sortedList;
 };
 
-sortData();
+//(async() => await sortData())();
