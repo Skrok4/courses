@@ -3,8 +3,8 @@ import axios from 'axios';
 export const getData = (url) => {
   return axios
     .get(url)
-    .then((response) => { return response.data; })
-    .catch((error) => { return error; });
+    .then(response => response.data)
+    .catch(error => error);
 };
 export default getData;
 
