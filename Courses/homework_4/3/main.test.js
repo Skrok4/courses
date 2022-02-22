@@ -1,4 +1,4 @@
-import { getUsersWithPostAndComments } from './main.js'
+import { getUsersWithPostAndComments } from './main'
 import axios from 'axios';
 jest.mock('axios');
 
@@ -35,12 +35,42 @@ const comments = [
         name: 'Leonardo',
     },
 ];
-describe('Describe getUsersWithPostAndComments function', () => {
+
+const getUsersWithPostAndCommentsData = [
+    {
+        id: 1,
+        name: 'Lionel Messi',
+        email: 'Messi228@april.biz',
+        posts: [
+            {
+                userId: 1, id: 1, title: 'I kill all head magnifier', comments: [
+                    {
+                        postId: 1,
+                        id: 1,
+                        name: 'Leonardo',
+                    },
+                ],
+            },
+        ],
+    },
+]
+
+describe('Describe getUsersWithPostAndComments()', () => {
+    test('Test getUsersWithPostAndComments function', async () => {
+
+        axios.mockImplementationOnce(() => Promise.resolve({ data: users }));
+        axios.mockImplementationOnce(() => Promise.resolve({ data: posts }));
+        axios.mockImplementationOnce(() => Promise.resolve({ data: comments }));
+
+        const result = await getUsersWithPostAndComments();
+        expect(result).toEqual(getUsersWithPostAndCommentsData);
+    });
+
     test('Axios should be called 3 times and return 3 objects', async () => {
 
-        axios.mockImplementtationOnce(() => Promise.resolve({ data: users }));
-        axios.mockImplementtationOnce(() => Promise.resolve({ data: posts }));
-        axios.mockImplementtationOnce(() => Promise.resolve({ data: comments }));
+        axios.mockImplementationOnce(() => Promise.resolve({ data: users }));
+        axios.mockImplementationOnce(() => Promise.resolve({ data: posts }));
+        axios.mockImplementationOnce(() => Promise.resolve({ data: comments }));
 
         await getUsersWithPostAndComments();
 
@@ -59,5 +89,3 @@ describe('Describe getUsersWithPostAndComments function', () => {
         );
     });
 });
-
-
