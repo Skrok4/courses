@@ -7,12 +7,13 @@ export const getCompletedTasks = async() => {
   const userList = await getData(usersURL);
   const toDoList = await getData(toDoListURL);
 
-  return userList.map((user) => {
+  const userListWithToDo = userList.map((user) => {
     const userCompletedTodo = toDoList.filter(
       (toDo) => toDo.completed && toDo.userId === user.id );
       
     user.toDo = userCompletedTodo;
   });
+  return userListWithToDo;
 };
 
 //(async() => await getCompletedTasks())();
