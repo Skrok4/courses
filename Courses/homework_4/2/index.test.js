@@ -6,9 +6,7 @@ global.fetch = jest.fn(() =>
   }),
 );
 
-beforeEach(() => {
-  fetch.mockClear();
-});
+afterEach(() => fetch.mockClear());
 
 const users = [{
   id: 1, name: 'Van', 
@@ -26,26 +24,18 @@ const toDo = [
   },
 ];
 
-describe('Add completed tasks in users toDo list', () => {
+describe('Added completed tasks in users toDo list', () => {
+  test('Should return data with user completed tasks', async() => {
 
-  beforeEach(() => {
-    fetch.mockImplementationOnce(() =>
-      Promise.resolve({
-        json: () => Promise.resolve(users),
-      }),
-    );
-  });
-    
-  beforeEach(() => {
-    fetch.mockImplementationOnce(() =>
-      Promise.resolve({
-        json: () => Promise.resolve(toDo),
-      }),
-    );
-  });
+    fetch.mockReturnValueOnce({
+      json: () => users,
+    });
 
+    fetch.mockReturnValueOnce({
+      json: () => toDo,
+    });
+   
 
-  test('Users with completed tasks', async() => {
     const result = await getCompletedTasks();
 
     expect(result).toStrictEqual([{
@@ -53,24 +43,10 @@ describe('Add completed tasks in users toDo list', () => {
       name: 'Van',
       toDo: [{
         userId: 1, title: 'Swimming', completed: true, 
-      },{
+      },
+      {
         userId: 1, title: 'Coding', completed: true,
       }],
     }]);
-  });
-
-
-  test('Should called 2 times with correct links', async() => {
-    await getCompletedTasks();
-
-    expect(fetch).toHaveBeenCalledTimes(2);
-
-    expect(fetch).toHaveBeenCalledWith(
-      'https://jsonplaceholder.typicode.com/users',
-    );
-
-    expect(fetch).toHaveBeenCalledWith(
-      'https://jsonplaceholder.typicode.com/todos',
-    );
   });
 });
