@@ -1,12 +1,14 @@
 import axios from 'axios';
 
-export const getData = (url) => {
-  return axios
-    .get(url)
-    .then(response => response.data)
-    .catch(error => error);
+export const getData = async (url) => {
+  try {
+    const response = await axios.get(url);
+
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
 };
-export default getData;
 
 export const getUsersWithPostAndComments = async () => {
 
@@ -18,7 +20,8 @@ export const getUsersWithPostAndComments = async () => {
   const posts = await getData(postsURL);
   const comments = await getData(commentsURL);
 
-  return userList = users.map(user => {
+
+  const userList = users.map(user => {
     const userPosts = posts.filter(post => user.id === post.userId);
 
     const userPostAndComments = userPosts.map(post => {
@@ -30,6 +33,8 @@ export const getUsersWithPostAndComments = async () => {
 
     return user;
   });
+
+  return userList;
 };
 
-//(async () => await getUsersWithPostAndComments())();
+// (async () => await getUsersWithPostAndComments())();
