@@ -55,7 +55,8 @@ const getUsersWithPostAndCommentsData = [
     },
 ]
 
-describe('Describe getUsersWithPostAndComments()', () => {
+describe('getUsersWithPostAndComments() should take 3 object from links and create final object that consist data of three previous', () => {
+
     test('Test getUsersWithPostAndComments function', async () => {
 
         axios.mockImplementationOnce(() => Promise.resolve({ data: users }));
@@ -63,7 +64,7 @@ describe('Describe getUsersWithPostAndComments()', () => {
         axios.mockImplementationOnce(() => Promise.resolve({ data: comments }));
 
         const result = await getUsersWithPostAndComments();
-        expect(result).toEqual(getUsersWithPostAndCommentsData);
+        expect(result).toStrictEqual(getUsersWithPostAndCommentsData);
     });
 
     test('Axios should be called 3 times and return 3 objects', async () => {
