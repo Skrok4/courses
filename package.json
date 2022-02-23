@@ -1,29 +1,30 @@
 {
-  "name": "first_task",
+  "name": "tasks",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "main.js",
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    },
+    "verbose": true
+  },
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Skrok4/courses.git"
-  },
-  "keywords": [
-    "js"
-  ],
-  "author": "Alex",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Skrok4/courses/issues"
-  },
-  "homepage": "https://github.com/Skrok4/courses#readme",
   "dependencies": {
-    "@babel/core": "^7.16.12",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-typescript": "^7.16.7",
-    "babel-jest": "^27.4.6"
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "axios": "^0.26.0",
+    "babel-plugin-dotenv-import": "^2.2.0",
+    "babel-preset-expo": "^9.0.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.11"
   }
 }
